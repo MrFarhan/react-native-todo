@@ -2,14 +2,14 @@ import React from 'react';
 import {Image, Text, View} from 'react-native';
 import {styles} from './Style';
 
-const NewsItem = () => {
+const NewsItem = ({title,publishedDate}) => {
   return (
     <View style={styles.newsItem}>
       <View style={styles.headingContainer}>
         <Text style={styles.heading}>
-          Floods caused over $32 billion losses, WB initial estimates
+         {title}
         </Text>
-        <Text style={styles.reportedBy}>The Express Time</Text>
+        <Text style={styles.reportedBy}>{publishedDate}</Text>
       </View>
       <View style={styles.imageContainer}>
         <Image
