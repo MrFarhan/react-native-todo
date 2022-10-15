@@ -1,26 +1,22 @@
 import React, {useState} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
-const ListItem = () => {
-  const [doneState, setDoneState] = useState(true);
+const ListItem = ({todo,id,DeleteTodoHandler}) => {
+  const [doneState, setDoneState] = useState(false);
 
   return (
     <View style={styles.container}>
       <Text
         style={
-            doneState ? styles.listContentComplete : styles.listContentIncomplete
+          doneState ? styles.listContentComplete : styles.listContentIncomplete
         }>
-        ListItem
+        {todo}
       </Text>
-      <TouchableOpacity
-        // style={styles.addButton}
-        onPress={() => setDoneState((prev)=>!prev)}>
-        <Text>{doneState ? "Completed" : "Incomplete"}</Text>
+      <TouchableOpacity onPress={() => setDoneState(prev => !prev)}>
+        <Text>{doneState ? 'Completed' : 'Incomplete'}</Text>
       </TouchableOpacity>
-      <TouchableOpacity
-        // style={styles.addButton}
-        onPress={() => console.warn('Delete button clicked')}>
-        <Text>Delete</Text>
+      <TouchableOpacity onPress={() => DeleteTodoHandler(id)} disabled={doneState}>
+        <Text >Delete</Text>
       </TouchableOpacity>
     </View>
   );
@@ -49,10 +45,11 @@ const styles = StyleSheet.create({
   listContentComplete: {
     width: '60%',
     textDecorationLine: 'line-through',
+    color: 'gray',
   },
-  listContentIncomplete:{
+  listContentIncomplete: {
     width: '60%',
-  }
+  },
 });
 
 export default ListItem;
