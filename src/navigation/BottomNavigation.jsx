@@ -1,7 +1,8 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import { Text } from 'react-native';
+import {Text} from 'react-native';
 import VectorIcons from '../constants/vectorIcon';
 import Home from '../screens/Home/Home';
+import Login from '../screens/Login/Login';
 import News from '../screens/News/News';
 
 const Tab = createBottomTabNavigator();
@@ -39,6 +40,25 @@ export default function BottomNavigation() {
           headerShown: false,
           tabBarLabel: ({focused, color, size}) => (
             <Text style={{color: focused ? 'red' : color}}>News</Text>
+          ),
+          tabBarIcon: ({focused}) => {
+            return (
+              <MaterialCommunityIcons
+                name="newspaper-variant-outline"
+                color={focused ? 'red' : '#6d63ff'}
+                size={22}
+              />
+            );
+          },
+        }}
+      />
+      <Tab.Screen
+        name="Login"
+        component={Login}
+        options={{
+          headerShown: false,
+          tabBarLabel: ({focused, color, size}) => (
+            <Text style={{color: focused ? 'red' : color}}>Login</Text>
           ),
           tabBarIcon: ({focused}) => {
             return (

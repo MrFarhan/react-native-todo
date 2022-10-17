@@ -19,6 +19,11 @@ const Navigation = () => {
           component={BottomNavigation}
           options={{headerShown: false}}
         />
+        <Stack.Screen
+          name="LoginScreen"
+          component={BottomNavigation}
+          options={{headerShown: false}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
