@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   SafeAreaView,
   Text,
@@ -8,8 +8,37 @@ import {
   View,
 } from 'react-native';
 import {styles} from './Style';
+import auth from '@react-native-firebase/auth';
 
 const Login = () => {
+  const [initializing, setInitializing] = useState(true);
+  const [user, setUser] = useState();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+
+  // Handle user state changes
+  function onAuthStateChanged(user) {
+    setUser(user);
+    if (initializing) setInitializing(false);
+  }
+
+  useEffect(() => {
+    const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+    return subscriber; // unsubscribe on unmount
+  }, []);
+
+  if (initializing) return null;
+
+  const HandleSubmit = () => {
+    if (email.trim() && password.trim()) {
+      auth()
+        .signInWithEmailAndPassword(email, password)
+        .then(res => {
+          setUser(res.user);
+        })
+        .catch(res => {});
+    }
+  };
   return (
     <SafeAreaView>
       <View style={styles.loginMainContainer}>
@@ -20,15 +49,17 @@ const Login = () => {
           <Text style={styles.loginText}>Login</Text>
           <TextInput
             placeholder="Email"
-            keyboardType="numeric"
             style={styles.email}
+            onChangeText={setEmail}
           />
           <TextInput
             placeholder="Password"
-            keyboardType="numeric"
             style={styles.password}
+            onChangeText={setPassword}
           />
-          <TouchableOpacity style={styles.loginButtonsGroup}>
+          <TouchableOpacity
+            style={styles.loginButtonsGroup}
+            onPress={HandleSubmit}>
             <Text style={styles.loginButton}>Login</Text>
           </TouchableOpacity>
           <View style={styles.bottomButtonsGroup}>
