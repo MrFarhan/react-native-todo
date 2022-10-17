@@ -10,7 +10,7 @@ import {
 import {styles} from './Style';
 import auth from '@react-native-firebase/auth';
 
-const Login = ({navigation}) => {
+const Signup = ({navigation}) => {
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState();
   const [email, setEmail] = useState();
@@ -30,7 +30,7 @@ const Login = ({navigation}) => {
   if (initializing) return null;
 
   const HandleSubmit = () => {
-    if (email?.trim() && password?.trim()) {
+    if (email.trim() && password.trim()) {
       auth()
         .signInWithEmailAndPassword(email, password)
         .then(res => {
@@ -46,7 +46,7 @@ const Login = ({navigation}) => {
           <Text style={styles.welcomeText}>Welcome</Text>
         </View>
         <View style={styles.loginContentContainer}>
-          <Text style={styles.loginText}>Login</Text>
+          <Text style={styles.loginText}>Signup</Text>
           <TextInput
             placeholder="Email"
             style={styles.email}
@@ -60,13 +60,16 @@ const Login = ({navigation}) => {
           <TouchableOpacity
             style={styles.loginButtonsGroup}
             onPress={HandleSubmit}>
-            <Text style={styles.loginButton}>Login</Text>
+            <Text style={styles.loginButton}>Signup</Text>
           </TouchableOpacity>
           <View
             style={styles.bottomButtonsGroup}
-            onStartShouldSetResponder={() => navigation.navigate('Signup')}>
-            <Text style={styles.createAnAccount}>Don't have an account ?</Text>
-            <Text style={styles.signup}>Signup</Text>
+            onStartShouldSetResponder={() => navigation.navigate('Login')}>
+              <Text style={styles.createAnAccount}>
+                Already have an account ?
+              </Text>
+
+              <Text style={styles.signup}>Sign in</Text>
           </View>
         </View>
       </View>
@@ -74,4 +77,4 @@ const Login = ({navigation}) => {
   );
 };
 
-export default Login;
+export default Signup;

@@ -71,7 +71,6 @@ export const styles = StyleSheet.create({
   createAnAccount: {
     fontFamily: 'FuzzyBubbles-Bold',
     fontSize: 15,
-    textAlign:"center",
     alignSelf:"center"
   },
   signup: {
