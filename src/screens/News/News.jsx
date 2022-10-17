@@ -46,7 +46,7 @@ const News = () => {
             data={news}
             keyExtractor={({id}, index) => id}
             renderItem={({item}) => (
-              <NewsItem title={item?.title} publishedDate={item?.pubDate} key={item?.title}/>
+              <NewsItem title={item?.title} publishedDate={item?.pubDate} key={Math.random()}/>
             )}
           />
         )}

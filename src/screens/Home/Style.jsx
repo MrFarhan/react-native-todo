@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
   topBanner: {
@@ -7,6 +7,16 @@ export const styles = StyleSheet.create({
     borderBottomLeftRadius: 55,
     borderBottomRightRadius: 55,
     borderRadius: 2,
+  },
+  loginGroup: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent:"space-evenly",
+    flexWrap:"wrap",
+  },
+  logout: {
+    paddingTop: 80,
+    color:"white"
   },
   userName: {
     padding: 10,

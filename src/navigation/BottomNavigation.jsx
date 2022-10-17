@@ -10,7 +10,6 @@ const {AntDesign, MaterialIcons, MaterialCommunityIcons} = VectorIcons;
 export default function BottomNavigation() {
   return (
     <Tab.Navigator
-      initialRouteName="Home"
       screenOptions={{
         activeTintColor: 'yellow',
       }}>
@@ -40,25 +39,6 @@ export default function BottomNavigation() {
           headerShown: false,
           tabBarLabel: ({focused, color, size}) => (
             <Text style={{color: focused ? 'red' : color}}>News</Text>
-          ),
-          tabBarIcon: ({focused}) => {
-            return (
-              <MaterialCommunityIcons
-                name="newspaper-variant-outline"
-                color={focused ? 'red' : '#6d63ff'}
-                size={22}
-              />
-            );
-          },
-        }}
-      />
-      <Tab.Screen
-        name="Login"
-        component={Login}
-        options={{
-          headerShown: false,
-          tabBarLabel: ({focused, color, size}) => (
-            <Text style={{color: focused ? 'red' : color}}>Login</Text>
           ),
           tabBarIcon: ({focused}) => {
             return (

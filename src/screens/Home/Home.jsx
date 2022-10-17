@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   FlatList,
+  Pressable,
   SafeAreaView,
   StyleSheet,
   Text,
@@ -10,12 +11,15 @@ import {
 } from 'react-native';
 import ListItem from '../../components/ListItem';
 import {styles} from './Style';
+import {useDispatch, useSelector} from 'react-redux';
+import auth from '@react-native-firebase/auth';
+import { userDetailsAction } from '../../redux/Actions';
 
-const Home = () => {
+const Home = ({navigation}) => {
   const [doneState, setDoneState] = useState();
   const [todos, setTodos] = useState([]);
   const [todo, setTodo] = useState('');
-
+  const state = useSelector(state => state);
   const AddTodoHandler = () => {
     if (todo.trim()) {
       setTodos(prev =>
@@ -33,12 +37,23 @@ const Home = () => {
 
     setTodos(prevTodos?.filter(item => item.id !== id));
   };
-  console.log('hello', todo, todos);
+  const dispatch = useDispatch();
+
+  const HandleLogout = () => {
+    auth().signOut();
+    dispatch(userDetailsAction({}))
+  };
+
   return (
     <View>
       {/* <SafeAreaView> */}
       <View style={styles.topBanner}>
-        <Text style={styles.userName}>Hello Ussssser</Text>
+        <View style={styles.loginGroup}>
+          <Text style={styles.userName}>Hello {state?.userDetails?.email}</Text>
+          <Pressable onPress={HandleLogout}>
+            <Text style={styles.logout}>Logout</Text>
+          </Pressable>
+        </View>
         <Text style={styles.subParagraphs}>What are you doing today?</Text>
         <View style={styles.inputGroup}>
           <TextInput

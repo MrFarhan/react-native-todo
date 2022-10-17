@@ -9,12 +9,17 @@ import {
 } from 'react-native';
 import {styles} from './Style';
 import auth from '@react-native-firebase/auth';
+import {userAction, userDetailsAction} from '../../redux/Actions';
+import {useDispatch, useSelector} from 'react-redux';
+import {loggeduser} from '../../redux/Reducer';
 
 const Login = ({navigation}) => {
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const state = useSelector(state => state);
+  let dispatch = useDispatch();
 
   // Handle user state changes
   function onAuthStateChanged(user) {
@@ -35,8 +40,17 @@ const Login = ({navigation}) => {
         .signInWithEmailAndPassword(email, password)
         .then(res => {
           setUser(res.user);
+          dispatch(
+            userDetailsAction({
+              email: res?.user?.email,
+              isEmailVerified: res.user?.emailVerified,
+            }),
+          );
         })
-        .catch(res => {});
+        .catch(err => {
+          console.log("erro ",err)
+          console.warn('error while logging in please try again later');
+        });
     }
   };
   return (
