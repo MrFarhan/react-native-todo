@@ -2,22 +2,19 @@ import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
   welcomeText: {
-    alignItems: 'center',
-    flexDirection: 'row',
+    fontFamily: 'FuzzyBubbles-Bold',
     color: 'white',
-    fontSize: 30,
+    fontSize: 35,
   },
   loginMainContainer: {
-    // flex: 1,
     height: '100%',
-    backgroundColor: '#6d63ff',
+    backgroundColor: '#4b0deb',
   },
   loginTopBanner: {
-    // backgroundColor: '#6d63ff',
     height: '40%',
-    alignItems: 'center',
-    justifyContent: 'center',
-    // flex: 0.5,
+    padding: 50,
+    alignItems: 'flex-start',
+    justifyContent: 'flex-end',
   },
   loginContentContainer: {
     borderTopRightRadius: 15,
@@ -26,18 +23,22 @@ export const styles = StyleSheet.create({
     backgroundColor: 'white',
     height: '100%',
     padding: 30,
-    // flex: 0.5,
   },
-  loginTect: {
-    padding: 20,
+  loginText: {
+    fontFamily: 'FuzzyBubbles-Bold',
+    paddingBottom: 20,
     fontSize: 30,
   },
   email: {
+    fontFamily: 'FuzzyBubbles-Bold',
+
     padding: 10,
     borderBottomWidth: 1,
     marginBottom: 40,
   },
   password: {
+    fontFamily: 'FuzzyBubbles-Bold',
+
     padding: 10,
     borderBottomWidth: 1,
   },
@@ -48,13 +49,15 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     width: '65%',
     textAlign: 'center',
-    padding: 20,
+    padding: 13,
     backgroundColor: 'blue',
     justifyContent: 'center',
     alignContent: 'center',
     alignSelf: 'center',
   },
   loginButton: {
+    fontFamily: 'FuzzyBubbles-Bold',
+
     color: 'white',
     fontSize: 20,
   },
@@ -62,13 +65,16 @@ export const styles = StyleSheet.create({
     paddingTop: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width:'80%',
-    alignSelf:"center",
+    width: '80%',
+    alignSelf: 'center',
   },
-  createAnAccount:{
-    fontSize:15
+  createAnAccount: {
+    fontFamily: 'FuzzyBubbles-Bold',
+    fontSize: 15,
   },
-  signup:{
-    fontSize:20
-  }
+  signup: {
+    fontFamily: 'FuzzyBubbles-Bold',
+
+    fontSize: 20,
+  },
 });

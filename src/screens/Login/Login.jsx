@@ -17,7 +17,7 @@ const Login = () => {
           <Text style={styles.welcomeText}>Welcome</Text>
         </View>
         <View style={styles.loginContentContainer}>
-          <Text style={styles.loginTect}>Login</Text>
+          <Text style={styles.loginText}>Login</Text>
           <TextInput
             placeholder="Email"
             keyboardType="numeric"
