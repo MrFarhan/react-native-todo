@@ -11,37 +11,49 @@ export const styles = StyleSheet.create({
     backgroundColor: '#4b0deb',
   },
   loginTopBanner: {
-    height: '40%',
+    height: '45%',
     padding: 50,
     alignItems: 'flex-start',
     justifyContent: 'flex-end',
   },
   loginContentContainer: {
     borderTopRightRadius: 15,
+    borderTopLeftRadius: 15,
     borderColor: 'black',
-    borderRadius: 25,
     backgroundColor: 'white',
-    height: '100%',
+    flex:1,
     padding: 30,
+    paddingBottom:0
+
   },
   loginText: {
     fontFamily: 'FuzzyBubbles-Bold',
     paddingBottom: 20,
     fontSize: 30,
   },
-  email: {
-    fontFamily: 'FuzzyBubbles-Bold',
-
-    padding: 10,
-    borderBottomWidth: 1,
-    marginBottom: 40,
-  },
   password: {
+    position: 'relative',
+  },
+  passwordIcon: {
+    position: 'absolute',
+    right: 0,
+    bottom: 0,
+    top: 0,
+  },
+  basicInputStyle: {
     fontFamily: 'FuzzyBubbles-Bold',
-
-    padding: 10,
+    fontSize: 15,
+    paddingTop: 10,
+    paddingBottom: 10,
+    marginBottom: 20,
     borderBottomWidth: 1,
   },
+  // password: {
+  //   fontFamily: 'FuzzyBubbles-Bold',
+
+  //   padding: 10,
+  //   borderBottomWidth: 1,
+  // },
   loginButtonsGroup: {
     alignItems: 'center',
     marginTop: 25,
@@ -55,9 +67,11 @@ export const styles = StyleSheet.create({
     alignContent: 'center',
     alignSelf: 'center',
   },
+  disabled: {
+    backgroundColor: 'gray',
+  },
   loginButton: {
     fontFamily: 'FuzzyBubbles-Bold',
-
     color: 'white',
     fontSize: 20,
   },
@@ -71,8 +85,8 @@ export const styles = StyleSheet.create({
   createAnAccount: {
     fontFamily: 'FuzzyBubbles-Bold',
     fontSize: 15,
-    textAlign:"center",
-    alignSelf:"center"
+    textAlign: 'center',
+    alignSelf: 'center',
   },
   signup: {
     fontFamily: 'FuzzyBubbles-Bold',

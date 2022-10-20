@@ -1,20 +1,22 @@
 import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
+  loginMainContainer: {
+    height: '100%',
+    backgroundColor: '#4b0deb',
+    paddingBottom:40,
+    width:'100%'
+  },
+  loginTopBanner: {
+    height: '25%',
+    padding: 50,
+    alignItems: 'flex-start',
+    justifyContent: 'flex-end',
+  },
   welcomeText: {
     fontFamily: 'FuzzyBubbles-Bold',
     color: 'white',
     fontSize: 35,
-  },
-  loginMainContainer: {
-    height: '100%',
-    backgroundColor: '#4b0deb',
-  },
-  loginTopBanner: {
-    height: '40%',
-    padding: 50,
-    alignItems: 'flex-start',
-    justifyContent: 'flex-end',
   },
   loginContentContainer: {
     borderTopRightRadius: 15,
@@ -23,23 +25,19 @@ export const styles = StyleSheet.create({
     backgroundColor: 'white',
     height: '100%',
     padding: 30,
+    // marginBottom:100
   },
-  loginText: {
+  signupText: {
     fontFamily: 'FuzzyBubbles-Bold',
     paddingBottom: 20,
     fontSize: 30,
   },
-  email: {
+  basicInputStyle: {
     fontFamily: 'FuzzyBubbles-Bold',
-
-    padding: 10,
-    borderBottomWidth: 1,
-    marginBottom: 40,
-  },
-  password: {
-    fontFamily: 'FuzzyBubbles-Bold',
-
-    padding: 10,
+    fontSize: 15,
+    paddingTop: 10,
+    paddingBottom: 10,
+    marginBottom: 20,
     borderBottomWidth: 1,
   },
   loginButtonsGroup: {
@@ -57,7 +55,6 @@ export const styles = StyleSheet.create({
   },
   loginButton: {
     fontFamily: 'FuzzyBubbles-Bold',
-
     color: 'white',
     fontSize: 20,
   },
@@ -71,11 +68,19 @@ export const styles = StyleSheet.create({
   createAnAccount: {
     fontFamily: 'FuzzyBubbles-Bold',
     fontSize: 15,
-    alignSelf:"center"
+    alignSelf: 'center',
   },
   signup: {
     fontFamily: 'FuzzyBubbles-Bold',
-
     fontSize: 20,
+  },
+  password: {
+    position: 'relative',
+  },
+  passwordIcon: {
+    position: 'absolute',
+    right: 0,
+    bottom:0,
+    top:0
   },
 });
