@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "coffee-cup-list-grey-desk-from-planning-design-concept 2.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "coffee-cup-list-grey-desk-from-planning-design-concept 1.jpg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "coffee-cup-list-grey-desk-from-planning-design-concept.jpg",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
